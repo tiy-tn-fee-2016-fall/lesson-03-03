@@ -40,3 +40,37 @@ window.setTimeout(() => {
   // Put text inside of the h3
   sumEl.innerText = `The total in the bank is $${sum / 100}`;
 }, 5000);
+
+function createAccountCard(account, parentElement) {
+  // Make a div with a class of "column"
+  const column = document.createElement('div');
+  column.classList.add('column');
+  column.classList.add('is-4');
+  parentElement.appendChild(column);
+  column.innerHTML = `
+  <div class="card is-fullwidth account">
+    <div class="card-content">
+      <h3 class="account__name title is-3"></h3>
+      <h4 class="account__balance title is-4"></h4>
+      <p class="account__card subtitle"></p>
+    </div>
+  </div>`;
+
+  const name = column.querySelector('.account__name');
+  const balance = column.querySelector('.account__balance');
+  const card = column.querySelector('.account__card');
+
+  name.innerText = account.name;
+  balance.innerText = account.account_balance;
+  card.innerText = account.cc;
+
+  // Make a h3 with a class of "title" and a class of "is-2" and put the user name
+  // Make a div with a class of "card"
+  // Make a div with a class of "card-content"
+  // Make an h4 with a class of "title" and a class of "is-3" and put the account balances
+  // Make a p with a class of "subtitle" and fill it with the cc #
+}
+
+for (let counter = 0; counter < people.length; counter++) {
+  createAccountCard(people[counter], document.querySelector('.columns'));
+}
