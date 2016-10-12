@@ -23,3 +23,17 @@ for (let i = 0; i < acctBalances.length; i = i + 1) {
 }
 
 console.log(sum);
+
+// Let's make some HTML from our Javascript
+const sumEl = document.createElement('h3');
+
+// Put the sum heading at the end of the body
+document.body.appendChild(sumEl);
+
+sumEl.innerHTML = 'Thinking... <span class="fa fa-spinner fa-spin"></span>';
+
+// Wait 5 seconds
+window.setTimeout(() => {
+  // Put text inside of the h3
+  sumEl.innerText = `The total in the bank is $${sum / 100}`;
+}, 5000);
