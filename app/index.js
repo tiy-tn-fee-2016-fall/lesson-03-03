@@ -28,9 +28,12 @@ console.log(sum);
 const sumEl = document.createElement('h3');
 
 // Put the sum heading at the end of the body
-document.body.appendChild(sumEl);
+const container = document.querySelector('.container');
+container.appendChild(sumEl);
 
 sumEl.innerHTML = 'Thinking... <span class="fa fa-spinner fa-spin"></span>';
+// Add the "subtitle" class to our heading
+sumEl.classList.add('title');
 
 // Wait 5 seconds
 window.setTimeout(() => {
