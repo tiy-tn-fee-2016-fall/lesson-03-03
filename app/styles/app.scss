@@ -5,3 +5,27 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
 @import 'bulma/bulma';
+
+.car__price {
+  display: flex;
+  width: 100%;
+  padding: 0.5rem;
+  border: 0.1rem #a6a6a6 solid;
+  border-radius: 0.4rem;
+
+  &::before {
+    display: block;
+    margin: -0.5rem;
+    margin-right: 0.5rem;
+
+    padding: 0.5rem;
+    border-right: 0.1rem #a6a6a6 solid;
+
+    background: rgba(#a6a6a6, 0.4);
+    content: '$';
+  }
+
+  &::after {
+    content: '.99';
+  }
+}
